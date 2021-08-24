@@ -7,7 +7,7 @@ requirements = [
     "distributed",
     "voluptuous",
     "owl-pipeline-develop",
-    "CITE-seq-Count",
+    "CITE-seq-Count @ git+https://github.com/eddienko/CITE-seq-Count.git@devel#egg=CITE-seq-Count",
 ]
 
 setup_requirements = ["pytest-runner", "flake8"]

@@ -44,8 +44,6 @@ def main(
         f"{output}",
     ]
 
-    sys.argv = [""] + args
-
     client = Client.current()
-    fut = client.submit(cite_main)
+    fut = client.submit(cite_main, args)
     client.gather(fut)
