@@ -1,4 +1,3 @@
-import sys
 from pathlib import Path
 from typing import List
 
@@ -49,5 +48,5 @@ def main(
     ] + extra
 
     client = Client.current()
-    fut = client.submit(cite_main, args)
+    fut = client.submit(cite_main, args, logger)
     client.gather(fut)
