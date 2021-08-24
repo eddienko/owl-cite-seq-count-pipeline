@@ -1,5 +1,6 @@
 import sys
 from pathlib import Path
+from typing import List
 
 from cite_seq_count.__main__ import main as cite_main
 from distributed import Client
@@ -20,7 +21,10 @@ def main(
     expected_cells: int,
     trim: int,
     output: Path,
+    extra: List = None,
 ):
+    extra = extra or []
+
     args = [
         "-R1",
         f"{read1}",
@@ -42,7 +46,7 @@ def main(
         f"{trim}",
         "-o",
         f"{output}",
-    ]
+    ] + extra
 
     client = Client.current()
     fut = client.submit(cite_main, args)
