@@ -13,6 +13,6 @@ schema = vo.Schema(
         vo.Required("umi_last_base"): int,
         vo.Required("expected_cells"): int,
         vo.Required("output"): vo.Coerce(Path),
-        vo.Optional("start-trim", default=0): int,
+        vo.Optional("trim", default=0): int,
     }
 )

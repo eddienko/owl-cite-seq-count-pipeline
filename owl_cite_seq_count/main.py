@@ -18,7 +18,7 @@ def main(
     umi_first_base: int,
     umi_last_base: int,
     expected_cells: int,
-    start_trim: int,
+    trim: int,
     output: Path,
 ):
     args = [
@@ -39,7 +39,7 @@ def main(
         "-cells",
         f"{expected_cells}",
         "-trim",
-        f"{start_trim}",
+        f"{trim}",
         "-o",
         f"{output}",
     ]
