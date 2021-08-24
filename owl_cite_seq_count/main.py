@@ -49,4 +49,8 @@ def main(
 
     client = Client.current()
     fut = client.submit(cite_main, args, logger)
-    client.gather(fut)
+    try:
+        client.gather(fut)
+    except Exception as e:
+        logger.error(e, exc_info=True)
+        raise
