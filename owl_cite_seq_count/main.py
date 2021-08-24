@@ -1,6 +1,7 @@
 from pathlib import Path
 from typing import List
 
+import dask
 from cite_seq_count.__main__ import main as cite_main
 from distributed import Client
 from owl_dev import pipeline
@@ -48,6 +49,8 @@ def main(
     ] + extra
 
     client = Client.current()
+    # TODO: Use processes when supported
+    # with dask.annotate(executor="processes", retries=3):
     fut = client.submit(cite_main, args, logger)
     try:
         client.gather(fut)
