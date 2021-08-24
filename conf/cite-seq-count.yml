@@ -1,0 +1,26 @@
+# Version of the configuration file
+version: 1
+
+sig:extra_pip_packages: git+https://github.com/eddienko/owl-cite-seq-count-pipeline.git@devel
+sig:active: true
+
+# Name of the pipeline
+name: cite_seq_count
+
+# Pipeline arguments
+read1: /data/fastq/big_R1.fastq.gz
+read2: /data/fastq/big_R2.fastq.gz
+tags: /data/tags.csv
+cell_barcode_first_base: 1
+cell_barcode_last_base: 16
+umi_first_base: 17
+umi_last_base: 28
+expected_cells: 6000
+start-trim: 10
+output: /data/output
+
+# Resources requested
+resources:
+  threads: 10
+  workers: 1
+  memory: 32
