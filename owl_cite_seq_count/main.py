@@ -51,7 +51,7 @@ def main(
     client = Client.current()
     # TODO: Use processes when supported
     # with dask.annotate(executor="processes", retries=3):
-    fut = client.submit(cite_main, args, logger)
+    fut = client.submit(cite_main, args)
     try:
         client.gather(fut)
     except Exception as e:
