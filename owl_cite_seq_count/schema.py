@@ -1,5 +1,4 @@
 from pathlib import Path
-from typing import List
 
 import voluptuous as vo
 
@@ -15,6 +14,7 @@ schema = vo.Schema(
         vo.Required("expected_cells"): int,
         vo.Required("output"): vo.Coerce(Path),
         vo.Optional("trim", default=0): int,
+        vo.Optional("whitelist"): vo.Coerce(Path),
         vo.Optional("extra"): list,
     }
 )

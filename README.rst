@@ -40,6 +40,8 @@ An example pipeline definition file is:
     expected_cells: 6000
     # How many bases should we trim before starting to map
     trim: 10
+    # Whitelist of cell barcodes provided as a csv file
+    whitelist: /storage/user/cite/5kPBMC/whitelist.csv
     # Output
     output: /storage/user/5kPBMC/output
 

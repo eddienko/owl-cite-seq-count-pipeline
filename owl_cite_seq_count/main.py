@@ -21,6 +21,7 @@ def main(
     expected_cells: int,
     trim: int,
     output: Path,
+    whitelist: Path = None,
     extra: List = None,
 ):
     extra = extra or []
@@ -46,12 +47,18 @@ def main(
         f"{trim}",
         "-o",
         f"{output}",
-    ] + extra
+    ]
+
+    if whitelist is not None:
+        args += ["-wl", f"{whitelist}"]
+
+    args += [str(v) for v in extra]
 
     client = Client.current()
     # TODO: Use processes when supported
     # with dask.annotate(executor="processes", retries=3):
-    fut = client.submit(cite_main, args)
+    with dask.annotate(retries=2):
+        fut = client.submit(cite_main, args)
     try:
         client.gather(fut)
     except Exception as e:
