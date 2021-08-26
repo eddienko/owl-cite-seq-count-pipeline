@@ -51,6 +51,6 @@ An example pipeline definition file is:
     # Threads is the numbeer of cores 
     # Memory is the memory in Gi
     resources:
-    threads: 10
-    workers: 1
-    memory: 32
+      threads: 10
+      workers: 1
+      memory: 32
