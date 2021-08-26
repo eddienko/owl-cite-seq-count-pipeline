@@ -8,7 +8,7 @@ from owl_dev import pipeline
 from owl_dev.logging import logger
 
 
-@pipeline
+@pipeline()
 def main(
     *,
     read1: Path,

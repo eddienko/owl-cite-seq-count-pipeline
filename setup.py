@@ -8,6 +8,7 @@ requirements = [
     "voluptuous",
     "owl-pipeline-develop",
     "CITE-seq-Count @ git+https://github.com/eddienko/CITE-seq-Count.git@devel#egg=CITE-seq-Count",
+    "owl-pipeline-develop @ git+https://github.com/eddienko/owl-pipeline-develop.git@devel#egg=owl-pipeline-develop",
 ]
 
 setup_requirements = ["pytest-runner", "flake8"]
