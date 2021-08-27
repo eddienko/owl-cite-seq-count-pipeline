@@ -1,7 +1,7 @@
 # Version of the configuration file
 version: 1
 
-sig:extra_pip_packages: git+https://github.com/eddienko/owl-cite-seq-count-pipeline.git@devel
+sig:extra_pip_packages: git+https://github.com/eddienko/owl-cite-seq-count-pipeline.git
 sig:active: true
 
 # Name of the pipeline
