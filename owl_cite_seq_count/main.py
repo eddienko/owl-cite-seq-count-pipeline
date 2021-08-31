@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 from typing import List
 
@@ -51,6 +52,10 @@ def main(
 
     if whitelist is not None:
         args += ["-wl", f"{whitelist}"]
+
+    cpu_requests = os.getenv("CPU_REQUESTS")
+    if cpu_requests is not None:
+        args += ["--threads", f"{cpu_requests}"]
 
     args += [str(v) for v in extra]
 
